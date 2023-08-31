@@ -2,6 +2,7 @@ package com.kutakoff;
 
 import com.pengrad.telegrambot.request.SendSticker;
 
+//класс для приколов
 public enum Stickers {
 
     FUNNY_JIM_CARREY(1011661199L, "CAADBQADiQMAAukKyAPZH7wCI2BwFxYE");
@@ -15,9 +16,6 @@ public enum Stickers {
     }
 
     public SendSticker getSendSticker() {
-        if ("".equals(chatId)) throw new IllegalArgumentException("ChatId cant be null");
-        SendSticker sendSticker = new SendSticker(chatId, stickerId);
-        return sendSticker;
+        return new SendSticker(chatId, stickerId);
     }
-
 }
